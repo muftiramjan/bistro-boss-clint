@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Ourmenucover from "../Home/shared/over/Ourmenucover";
 import Ourmenucoverr from "../../assets/menu/banner3.jpg"
 import UseMenu from "../../Hoks/usehoks/UseMenu";
-import Sectionhedin from "../../components/Sectionhedin";
+import Sectionhedin from "../../components/SectionHide";
 import Menucatgory from "./Menucetagory/Menucatgory";
 import dessertimg from "../../assets/menu/dessert-bg.jpeg"
 import pizzaimg from "../../assets/menu/pizza-bg.jpg"

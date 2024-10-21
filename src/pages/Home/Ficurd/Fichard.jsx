@@ -1,4 +1,4 @@
-import Sectionhedin from "../../../components/Sectionhedin";
+import Sectionhedin from "../../../components/SectionHide";
 import featured from "../../../assets/home/featured.jpg"
 import './Feartued.css'
 const Fichard = () => {

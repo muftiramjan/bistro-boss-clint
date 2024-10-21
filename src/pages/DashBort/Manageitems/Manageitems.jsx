@@ -1,6 +1,6 @@
 import { FaEdit, FaTrashAlt, } from "react-icons/fa";
 import UseMenu from "../../../Hoks/usehoks/UseMenu";
-import Sectionhedin from "../../../components/Sectionhedin";
+import Sectionhedin from "../../../components/SectionHide";
 import Swal from "sweetalert2";
 import UseAxios from "../../../Hoks/usehoks/useAxos/UseAxios";
 import { Link } from "react-router-dom";

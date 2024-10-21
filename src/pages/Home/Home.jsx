@@ -2,10 +2,10 @@ import Benar from "./Baner/Benar";
 import Bistro from "./BistroBoss/Bistro";
 import CallUs from "./CallUs/CallUs";
 
-import FoddCategory from "./Category/FoddCategory";
+import FoodCategory from "./Category/FoodCategory";
 import Fichard from "./Ficurd/Fichard";
 import Pupoermenu from "./Pupolermenu/Pupoermenu";
-import TESTIMONIALS from "./Testimonilias/TESTIMONIALS";
+import TESTIMONIALS from "./Testimonilias/Testimonials";
 
 import { Helmet, } from 'react-helmet-async';
 
@@ -16,7 +16,7 @@ const Home = () => {
                 <title>Home</title>
             </Helmet>
             <Benar></Benar>
-            <FoddCategory></FoddCategory>
+            <FoodCategory></FoodCategory>
             <Bistro></Bistro>
             <Pupoermenu></Pupoermenu>
             <CallUs></CallUs>

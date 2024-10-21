@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Sectionhedin from "../../components/Sectionhedin";
+import Sectionhedin from "../../components/SectionHide";
 import { FaUtensils } from "react-icons/fa";
 import UseAxiosPublik from "../../Hoks/usehoks/UseAxiosPublik";
 import UseAxios from "../../Hoks/usehoks/useAxos/UseAxios";

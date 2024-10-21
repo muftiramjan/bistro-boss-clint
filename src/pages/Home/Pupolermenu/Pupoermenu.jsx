@@ -1,5 +1,5 @@
 
-import Sectionhedin from "../../../components/Sectionhedin";
+import Sectionhedin from "../../../components/SectionHide";
 import Menuitems from "../shared/Menuitems";
 import UseMenu from "../../../Hoks/usehoks/UseMenu";
 

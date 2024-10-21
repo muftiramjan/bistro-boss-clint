@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Sectionhedin from "../../../components/Sectionhedin";
+import Sectionhedin from "../../../components/SectionHide";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import UseAxiosPublik from "../../../Hoks/usehoks/UseAxiosPublik";
