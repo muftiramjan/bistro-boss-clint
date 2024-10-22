@@ -1,18 +1,16 @@
 import { useLoaderData } from "react-router-dom";
-import Sectionhedin from "../../../components/SectionHide";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import UseAxiosPublik from "../../../Hoks/usehoks/UseAxiosPublik";
-import UseAxios from "../../../Hoks/usehoks/useAxos/UseAxios";
-
+import UseAxiosPublic from "../../../Hoks/usehoks/UseAxiosPublic";
+import SectionHide from "../../../components/SectionHide";
 const image_hosting_kye =import.meta.env.VITE_API_HOSTING_KYE;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_kye}`
 
-const Updeteitem = () => {
-    const {name ,cetegory,recipe,price}=useLoaderData();
-   console.log(name,cetegory,recipe,price);
+const updateItem = () => {
+    const {name ,category,recipe,price}=useLoaderData();
+   console.log(name,category,recipe,price);
     const { register, handleSubmit,reset } = useForm()
-    const axiosPublic=UseAxiosPublik();
+    const axiosPublic=UseAxiosPublic();
     const axiosSicoer=UseAxios();
     const onSubmit = async (data) => {
         // image uplod imgbb
@@ -25,9 +23,9 @@ const res =await axiosPublic.post(image_hosting_api,imageFile,{
 if(res.data.success){
     const menuitem={
         name:data.name,
-        cetegory:data.cetegory,
+        category:data.category,
         price:parseFloat(data.price),
-        recepi:data.recepi,
+        recipe:data.recipe,
         image:res.data.display_url,
     }
     const menuRes= await axiosSicoer.post('/menu',menuitem)
@@ -38,7 +36,7 @@ if(res.data.success){
         Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${data.name} is adeded saccesfuly`,
+            title: `${data.name} is add successfully`,
             showConfirmButton: false,
             timer: 1500
           });
@@ -49,7 +47,7 @@ console.log(res.data);
     }
     return (
         <div>
-            <Sectionhedin heding='updete item' sabheding='updete info'></Sectionhedin>
+            <SectionHide heading='update item' subheading='update info'></SectionHide>
 
             <div >
                 <form  onSubmit={handleSubmit(onSubmit)}>
@@ -66,14 +64,14 @@ console.log(res.data);
                             className="input input-bordered w-full " />
                     </label>
                     <div className="">
-                        {/* cetegory */}
+                        {/* category */}
                         <div className="form-control w-full ">
                             <div className="label">
-                                <span className="label-text">cetegory</span>
+                                <span className="label-text">category</span>
                             </div>
-                            <select defaultValue={cetegory}{...register('cetegory',{required:true})}
+                            <select defaultValue={category}{...register('category',{required:true})}
                                 className="select select-bordered w-full ">
-                                <option disabled value='default'>selet a cetegory</option>
+                                <option disabled value='default'>slide a category</option>
                                 <option value="female">salad</option>
                                 <option value="soup">soup</option>
                                 <option value="pizza">pizza</option>
@@ -89,7 +87,7 @@ console.log(res.data);
                                 <span className="label-text">price</span>
                             </div>
                             <input
-                                type="numbar"
+                                type="number"
                                 defaultValue={price}
                                 placeholder="price"
                                 {...register('price')}
@@ -100,10 +98,10 @@ console.log(res.data);
                     </div>
                     <div className="form-control">
                         <div className="label">
-                            <span className="label-text">recepi detals</span>
+                            <span className="label-text">Recipe details</span>
                           
                         </div>
-                        <textarea {...register('recepi',{required:true})} className="textarea textarea-bordered h-24" placeholder="Bio"
+                        <textarea {...register('recipe',{required:true})} className="textarea textarea-bordered h-24" placeholder="Bio"
                         defaultValue={recipe}
                         ></textarea>
                         
@@ -112,7 +110,7 @@ console.log(res.data);
                     <input  {...register('image')}type="file" className="file-input w-full max-w-xs" />
                     </div>
                     <button className="btn bg-black text-white">
-                       opdete menu item
+                    Update menu item
                         
                     </button>
                 </form>
@@ -121,4 +119,4 @@ console.log(res.data);
     );
 };
 
-export default Updeteitem;
+export default updateItem;

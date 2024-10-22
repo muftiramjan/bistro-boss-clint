@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
-import UseAxiosPublik from "../../Hoks/usehoks/UseAxiosPublik";
+import UseAxiosPublik from "../../Hoks/usehoks/UseAxiosPublic";
 
 
 
@@ -17,7 +17,7 @@ const Authprovaider = ({ children }) => {
     const googleprovider= new GoogleAuthProvider();
     const axiosPulic=UseAxiosPublik();
 
-    const creatUser = (email, password) => {
+    const createUser = (email, password) => {
         setloddin(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -38,7 +38,7 @@ const updetuserProfile= (name,photo) => {
         return signInWithPopup(auth,googleprovider)
          
     }
-    const loguot = () => {
+    const logout = () => {
         setloddin(true)
         return signOut(auth)
     }
@@ -72,9 +72,9 @@ const updetuserProfile= (name,photo) => {
     const Aoutinfo = {
         user,
         lodding,
-        creatUser,
+        createUser,
         login,
-        loguot,
+        logout,
         updetuserProfile,
         googlelogine 
     }

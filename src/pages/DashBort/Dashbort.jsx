@@ -34,7 +34,7 @@ const Dashbort = () => {
                        manage bookins</NavLink>
                         
                     </li>
-                    <li><NavLink to="/dashbort/allusers">
+                    <li><NavLink to="/dashbort/AllUsers">
                         <FaUser></FaUser>
                        allusers</NavLink>
                         

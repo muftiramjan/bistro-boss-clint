@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Sectionhedin from "../../components/SectionHide";
 import { FaUtensils } from "react-icons/fa";
-import UseAxiosPublik from "../../Hoks/usehoks/UseAxiosPublik";
+import UseAxiosPublik from "../../Hoks/usehoks/UseAxiosPublic";
 import UseAxios from "../../Hoks/usehoks/useAxos/UseAxios";
 import Swal from "sweetalert2";
 

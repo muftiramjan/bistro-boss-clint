@@ -1,7 +1,7 @@
 import { FaGoogle } from "react-icons/fa";
 import UseAuth from "../Hoks/usehoks/user/UseAuth";
 import { useNavigate } from "react-router-dom";
-import UseAxiosPublik from "../Hoks/usehoks/UseAxiosPublik";
+import UseAxiosPublik from "../Hoks/usehoks/UseAxiosPublic";
 
 
 const Socallogin = () => {

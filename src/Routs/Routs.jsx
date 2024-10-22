@@ -4,16 +4,16 @@ import Home from "../pages/Home/Home";
 import Menu from "../pages/Menu/Menu";
 import Order from "../pages/Order/order/Order";
 import Login from "../pages/login/Login";
-import Signup from "../pages/signup/Signup";
-import Secret from "../pages/Home/shared/Secret/Secret";
 import PraivetRout from "../pages/PraivetRout/PraivetRout";
 import Dashbort from "../pages/DashBort/Dashbort";
 import Cart from "../pages/DashBort/Cart";
-import AllUsers from "../pages/DashBort/Allusers/AllUsers";
 import AdminRout from "../pages/PraivetRout/AdminRout";
 import ItemsAdd from "../pages/DashBort/ItemsAdd";
 import Manageitems from "../pages/DashBort/Manageitems/Manageitems";
-import Updeteitem from "../pages/DashBort/updeteItem/Updeteitem";
+import UpdateItem from "../pages/DashBort/update/UpdateItem";
+import AllUsers from "../pages/DashBort/Allusers/AllUsers";
+import Signup from "../pages/signup/singUp";
+
 
 
 export const router = createBrowserRouter([
@@ -38,17 +38,14 @@ export const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/signup',
+                path: '/singUp',
                 element: <Signup></Signup>
             },
-            {
-                path: '/secret',
-                element: <PraivetRout><Secret></Secret></PraivetRout>
-            }
+          
         ]
     },
     {
-        path: "dashbort",
+        path: "dashboard",
         element: <PraivetRout><Dashbort></Dashbort></PraivetRout>,
         children: [
             {
@@ -65,13 +62,14 @@ export const router = createBrowserRouter([
                 element:<AdminRout> <Manageitems></Manageitems> </AdminRout>
             },
             {
-                path: "updeteItem/:id",
-                element:<AdminRout> <Updeteitem></Updeteitem> </AdminRout>,
+                path: "UpdateItem/:id",
+                element:<AdminRout> <updateItem></updateItem> </AdminRout>,
                 loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
             },
             {
-                path: "allusers",
-                element:<AdminRout> <AllUsers></AllUsers> </AdminRout>
+                path: "AllUsers",
+                element:<AdminRout><AllUsers></AllUsers></AdminRout> 
+                
             }
         ]
     }

@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import UseAuth from "../user/UseAuth";
 
  
- const axiosSicoer = axios.create({
+ const axiosSecure = axios.create({
     baseURL: 'http://localhost:5000'
 });
 
 
 const UseAxios = () => {
     const navigate =useNavigate();
-    const {loguot}=UseAuth();
-    axiosSicoer.interceptors.request.use(function (config){
-        const token = localStorage.getItem('acces-token')
-        // console.log('reqousr',token);
+    const {logout}=UseAuth();
+    axiosSecure.interceptors.request.use(function (config){
+        const token = localStorage.getItem('access-token')
         config.headers.authorization = `Bearer ${token}`
         return config;
     },
@@ -21,17 +20,16 @@ const UseAxios = () => {
         // Do something with request error
         return Promise.reject(error);
 })
-axiosSicoer.interceptors.response.use(function(response){
+axiosSecure.interceptors.response.use(function(response){
     return response
 },async (error) => {
     const status =error.response.status;
-    // console.log('ststus error',status);
     if(status === 401 || status ===403){
-        // await loguot();
-        // navigate('/login')
+         await logout();
+         navigate('/login')
     }
 })
-return axiosSicoer
+return axiosSecure
 };
 
 export default UseAxios;
