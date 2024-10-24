@@ -1,6 +1,6 @@
 import { Parallax } from 'react-parallax';
 import PropTypes from 'prop-types'; 
-const Ourmenucover = ({img,title}) => {
+const OurMenuCover = ({img,title}) => {
     return (
         <Parallax
         blur={{ min: -50, max: 50 }}
@@ -22,10 +22,10 @@ const Ourmenucover = ({img,title}) => {
        
     );
 };
-Ourmenucover.propTypes = {
+OurMenuCover.propTypes = {
     img: PropTypes.object
   };
-Ourmenucover.propTypes = {
+  OurMenuCover.propTypes = {
     title: PropTypes.object
   };
-export default Ourmenucover;
+export default OurMenuCover;

@@ -7,7 +7,7 @@ const Main = () => {
     const location = useLocation();
     const noHederFotter = location.pathname.includes('login') ||location.pathname.includes('signup')
     return (
-        <div>
+        <div className="p-6 border-4 bg-slate-400">
             {noHederFotter || <NavBar></NavBar>}
             <Outlet></Outlet>
             {noHederFotter || <Fotter></Fotter>}

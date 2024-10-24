@@ -1,9 +1,9 @@
 import Menuitems from "../../Home/shared/Menuitems";
 import PropTypes from 'prop-types';
-import Ourmenucover from "../../Home/shared/over/Ourmenucover";
+import Ourmenucover from "../../Home/shared/over/OurMenuCover";
 import { Link } from "react-router-dom";
 
-const Menucatgory = ({items,title,img}) => {
+const MenuCategory = ({items,title,img}) => {
     
     return (
         <div className="pt-8">
@@ -29,13 +29,13 @@ const Menucatgory = ({items,title,img}) => {
     );
     
 };
-Menucatgory.propTypes = {
+MenuCategory.propTypes = {
     items:PropTypes.object
 }
-Menucatgory.propTypes = {
+MenuCategory.propTypes = {
     title:PropTypes.object
 }
-Menucatgory.propTypes = {
+MenuCategory.propTypes = {
     img:PropTypes.object
 }
-export default Menucatgory;
+export default MenuCategory;
